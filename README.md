@@ -1,2 +1,2 @@
 # Pytris
-Recriação do jogo __Tertris__ em python.
+Recriação do jogo _Tetris_ em python usando pygame.
