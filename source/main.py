@@ -1,11 +1,8 @@
 import pygame as pg
 from pygame.locals import *
 
-
-WIDTH = 400
-HEIGHT = 600
-FPS = 30
-
+from sprites import *
+from constants import *
 
 class Game:
     def __init__(self) -> None:
@@ -15,6 +12,7 @@ class Game:
         pg.display.set_caption('Pytris')
 
         self.all_sprites = pg.sprite.Group()
+        self.current_block = ZBlock(WIDTH/2, 45, self.all_sprites)
 
         self.running = True
         self.clock = pg.time.Clock()
@@ -38,8 +36,8 @@ class Game:
 
     def draw(self):
         self.screen.fill('black')
-        
-        self.all_sprites.draw()
+
+        self.all_sprites.draw(self.screen)
         
         pg.display.flip()
 
